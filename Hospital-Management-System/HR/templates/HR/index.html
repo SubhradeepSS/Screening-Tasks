@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h2>
+        <a href="{% url 'HR:view_doctors' %}">View Doctors' Database</a><br>
+        <a href="{% url 'HR:add_doctor' %}">Add New Doctor</a>
+    </h2>
+    <h2>
+        <div>
+            Total Doctors: {{ total_doc }}
+        </div>
+        
+        <div>
+            Total Patients: {{ total_patients }}
+        </div>
+
+        <div>
+            Number of OnDuty Doctors: {{ onduty_doc }}
+        </div>
+    </h2>
+</body>
+</html>

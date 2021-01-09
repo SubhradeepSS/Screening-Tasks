@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice History</title>
+</head>
+<body>
+    <h1>Patient: {{ patient }}</h1>
+    <div>
+        <ol>
+            {% for i in invoice %}
+                <li>
+                    <h2>{{ i }}</h2>
+                    <h3>
+                        <a href="{% url 'receptionist:edit_invoice' patient.id i.id %}">Edit</a><br>
+                    </h3>
+                </li>
+                {% empty %}
+                    <h2>No Invoice History Available</h2>
+            {% endfor %}
+        </ol>
+    </div>
+    <h2>
+        <a href="{% url 'receptionist:create_invoice' patient.id %}">Create new invoice</a></h2>
+</body>
+</html>

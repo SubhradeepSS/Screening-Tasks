@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    {% if error %}
+        {{ error }}
+    {% endif %}
+    <h1>
+        {{ p.name }}
+    </h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ p_form }}
+        <input type="submit" value="Update">
+    </form>
+    <h3>
+        <div>
+            <a href="{% url 'receptionist:delete_patient' p.id %}">Delete Patient</a><br>
+            <a href="{% url 'receptionist:view_all_patients' %}">Cancel</a>
+        </div>
+    </h3>
+
+</body>
+</html>

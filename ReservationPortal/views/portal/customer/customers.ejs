@@ -1,0 +1,25 @@
+<div>
+    <h1>Your customers: </h1>
+    <ul>
+        <% for(let customer of customers) { %>
+            <li>
+                <form action="/portal/customer/detail" method="post">
+                    <input type="hidden" name="customerId" value="<%= customer._id %>">
+                    <input type="submit" value="<%= customer.name %>">
+                </form>
+            </li>
+        <% } %> 
+    </ul>  
+</div>
+
+<div>
+    <h2>Create a new Customer</h2>
+    <form action="/portal/customer" method="post">
+        <input type="text" name="name" placeholder="Name"><br>
+        <input type="text" name="contact" placeholder="Contact"><br>
+        <input type="submit" value="Create">
+    </form>
+</div>
+
+<br><br>
+<a href="/portal/">Home</a>

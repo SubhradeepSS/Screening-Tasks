@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+<body>
+
+    <h1>{{ patient }}</h1>
+    <h2>
+        <a href="{% url 'patient:view_appointment' patient.id %}">View Appointments</a><br>
+        <a href="{% url 'patient:view_profile' patient.id %}">View your profile</a><br>
+        <a href="{% url 'patient:view_med_hist' patient.id %}">View Medical History</a><br>
+        <a href="{% url 'patient:view_invoices' patient.id %}">View Invoices</a><br>
+    </h2>
+    
+
+</body>
+</html>

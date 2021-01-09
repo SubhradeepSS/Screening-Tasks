@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Prescription</title>
+</head>
+<body>
+    <h1>
+        Are you sure to delete the Prescription whose id is: {{ p.id }} ?
+    </h1>
+    <h2>
+        <a href="{% url 'doctor:after_deletion' doctor.id p.id %}">Delete</a>
+    </h2>
+    <h2>
+        <a href="{% url 'doctor:edit_prescription' doctor.id p.id %}">Edit the prescription instead</a>
+    </h2>
+    <h2>
+        <a href="{% url 'doctor:view_prescriptions' doctor.id %}">Cancel</a>
+    </h2>
+</body>
+</html>

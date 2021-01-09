@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Patient</title>
+</head>
+<body>
+    <h1>
+        Are you sure to delete the Patient whose name is: {{ p.name }} ?
+    </h1>
+    <h2>
+        <a href="{% url 'receptionist:after_deletion_patient' p.id %}">Delete</a>
+    </h2>
+    <h2>
+        <a href="{% url 'receptionist:edit_patient' p.id %}">Edit the patient profile instead</a>
+    </h2>
+    <h2>
+        <a href="{% url 'receptionist:view_all_patients' %}">Cancel</a>
+    </h2>
+</body>
+</html>

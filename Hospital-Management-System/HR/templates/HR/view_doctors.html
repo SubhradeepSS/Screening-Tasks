@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Doctors</title>
+</head>
+<body>
+    <ol>
+        {% for d in doctorsDB %}
+        <li>
+                <h1>{{ d }}</h1>
+                <h2>
+                    Email: {{d.email}}<br>
+                    Salary: {{d.salary}}<br>
+                    Deptt: {{d.department}}<br>
+                    Attendance: {{d.attendance}}<br>
+                    Gender: {{d.gender}}<br>
+                    Phone: {{d.phone}}<br>
+                    Status: {{d.status}}<br>
+                </h2>
+                <h3>
+                    <a href="{% url 'HR:edit_profile' d.id %}">Edit Profile</a>
+                </h3>     
+                    {% empty %}
+                        <h2>No Doctors in Database</h2>
+        </li>
+        {% endfor %}
+    </ol>
+    <h3>
+        <a href="{% url 'HR:index' %}">Go to home</a>
+    </h3>
+</body>
+</html>

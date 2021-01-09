@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Profile</title>
+</head>
+<body>
+    <h1>
+        Are you sure to delete the profile of the doctor whose name is: {{ dr }} ?
+    </h1>
+    <h2>
+        <a href="{% url 'HR:after_deletion' dr.id %}">Delete</a>
+    </h2>
+    <h2>
+        <a href="{% url 'HR:edit_profile' dr.id %}">Edit the profile instead</a>
+    </h2>
+    <h2>
+        <a href="{% url 'HR:view_doctors' %}">Cancel</a>
+    </h2>
+</body>
+</html>

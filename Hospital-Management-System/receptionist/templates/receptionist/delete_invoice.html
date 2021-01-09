@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Invoice</title>
+</head>
+<body>
+    <h1>
+        Are you sure to delete the Invoice whose id is: {{ i.id }} ?
+    </h1>
+    <h2>
+        <a href="{% url 'receptionist:after_deletion_invoice' patient.id i.id %}">Delete</a>
+    </h2>
+    <h2>
+        <a href="{% url 'receptionist:edit_invoice' patient.id i.id %}">Edit the invoice instead</a>
+    </h2>
+    <h2>
+        <a href="{% url 'receptionist:view_invoice_history' i.patient.id %}">Cancel</a>
+    </h2>
+</body>
+</html>

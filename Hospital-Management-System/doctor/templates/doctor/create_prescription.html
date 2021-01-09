@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Prescription</title>
+</head>
+<body>
+    {% if error %}
+        <h2>{{ error }}</h2>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ prescription_form }}
+        <input type="submit" value="Create">
+    </form>
+    <h3>
+        <a href="{% url 'doctor:view_doctor' doctor.id %}">Cancel</a>
+    </h3>
+</body>
+</html>

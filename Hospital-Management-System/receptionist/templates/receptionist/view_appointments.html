@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Appointments</title>
+</head>
+<body>
+    <h1>All Appointments:</h1><br>
+    <ol>
+        {% for a in appointments %}
+            <li>
+                <div>
+                    <h2>{{ a }}</h2>
+                    <h3>
+                        Date: {{ a.date }} <br>
+                        Time: {{ a.time }} <br>
+                        Doctor: {{ a.doctor }} <br>
+                        Patient: {{ a.patient }} <br>
+                        Status: {{ a.status }} <br>
+                        <a href="{% url 'receptionist:edit_appointment' a.id %}">Edit</a>
+                    </h3>
+                    
+                </div>
+                {% empty %}
+                <h3>No Appointments</h3>
+            </li>
+        {% endfor %}
+    </ol>
+    <h3>
+        <a href="{% url 'receptionist:index' %}">Go to home</a>
+    </h3>
+</body>
+</html>

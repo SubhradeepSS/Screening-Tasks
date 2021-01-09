@@ -1,0 +1,35 @@
+<div>
+    <h1>Your reservations: </h1>
+    <ul>
+        <% for(let reservation of reservations) { %>
+            <li>
+                <form action="/portal/reservation/detail" method="post">
+                    <input type="hidden" name="reservationId" value="<%= reservation._id %>">
+                <input type="submit" value="<%= reservation.time %>">
+            </form>
+            </li>
+        <% } %> 
+    </ul>  
+</div>
+
+<div>
+    <h2>Create a new Reservation</h2>
+    <form action="/portal/reservation" method="post">
+        <label for="customer">Customer</label>
+        <select name="customer" required>
+            <option value="none" selected disabled hidden> 
+                Select an Option 
+            </option>
+            <% for(let customer of customers) { %>
+                <option value="<%= customer._id %>"><%= customer.name %></option>
+            <% } %>  
+        </select>
+        <br><br>
+        <label for="time">Reservation Time</label>
+        <input type="date" name="time" required placeholder="Reservation Time"><br>
+        <input type="submit" value="Create">
+    </form>
+</div>
+
+<br><br>
+<a href="/portal/">Home</a>

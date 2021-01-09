@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Appointments</title>
+</head>
+<body>
+    <h1>Doctor: {{ doctor }}</h1>
+    <div>
+        <h2>Appointments</h2>
+        <ol>
+            {% for a in appointments %}
+                <h2>
+                   <li>
+                    Date: {{a.date}} <br>
+                    Time: {{a.time}} <br>
+                    Consulting Patient: {{a.patient}}<br>
+                </li>
+                {% empty %}
+                    No Appointments 
+                </h2>
+                
+            {% endfor %}
+        </ol>
+    </div>  
+</body>
+</html>

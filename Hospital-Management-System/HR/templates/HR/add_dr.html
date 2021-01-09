@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Doctor</title>
+</head>
+<body>
+    {% if message %}
+        <h1>{{ message }}</h1>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ doctorForm }}
+        <input type="submit" value="Create">
+    </form>
+    <h3>
+        <a href="{% url 'HR:index' %}">Cancel</a>
+    </h3>
+</body>
+</html>

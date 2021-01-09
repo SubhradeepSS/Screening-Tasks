@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Medical History</title>
+</head>
+<body>
+    <h1>Medical History:</h1><br>
+    <ol>
+        <li>
+            {% for h in medHist %}
+               <h2>{{ h }}</h2> 
+            {% empty %}
+                <h2>No medical history available</h2>
+            {% endfor %}
+        </li>
+        
+    </ol>
+</body>
+</html>

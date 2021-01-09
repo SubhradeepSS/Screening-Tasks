@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescriptions</title>
+</head>
+<body>
+    <h1>Prescriptions</h1>
+    <ol>
+        {% for p in prescriptions %}
+            <h2>
+                <li>{{ p }}</li>
+            </h2>
+            <h3>
+                <a href="{% url 'doctor:edit_prescription' doctor.id p.id %}">Edit</a>
+            </h3>
+            {% empty %}
+                <h3>No prescriptions</h3>
+        {% endfor %}
+    </ol>
+    <h3>
+        <a href="{% url 'doctor:create_prescription' doctor.id %}">Create a new Prescription</a>
+    </h3>
+</body>
+</html>

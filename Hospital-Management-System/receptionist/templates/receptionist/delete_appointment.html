@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Appointment</title>
+</head>
+<body>
+    <h1>
+        Are you sure to delete the Appointment whose id is: {{ ap.id }} ?
+    </h1>
+    <h2>
+        <a href="{% url 'receptionist:after_deletion' ap.id %}">Delete</a>
+    </h2>
+    <h2>
+        <a href="{% url 'receptionist:edit_appointment' ap.id %}">Edit the appointment instead</a>
+    </h2>
+    <h2>
+        <a href="{% url 'receptionist:view_all_appointments' %}">Cancel</a>
+    </h2>
+</body>
+</html>

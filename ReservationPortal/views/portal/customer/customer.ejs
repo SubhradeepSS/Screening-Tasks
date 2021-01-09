@@ -1,0 +1,16 @@
+<h2>Customer detail</h2>
+Name: <%= customer.name %> <br>
+Contact Number: <%= customer.contact %>
+
+<h3>Edit the contact details</h3>
+<form action="/portal/customer/edit" method="post">
+    <input type="hidden" name="id" value="<%= customer._id %>">
+    <input type="text" name="name" required value="<%= customer.name %>">
+    <input type="text" name="contact" required value="<%= customer.contact %>"><br>
+    <input type="submit" value="Update">
+</form>
+
+<form action="/portal/customer/delete" method="post">
+    <input type="hidden" name="id" value="<%= customer._id %>">
+    <input type="submit" value="Delete">
+</form>

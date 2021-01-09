@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Patients</title>
+</head>
+<body>
+    <h1>All Patients:</h1><br>
+    <ol>
+        {% for a in patients %}
+            <li>
+                <h1>{{ a.username }}</h1>
+                <h2>
+                <div>
+                    Name: {{a.name}}<br>
+                    Email: {{a.email}}<br>
+                    Age: {{a.age}}<br>
+                    Gender: {{a.gender}}<br>
+                    Phone: {{a.phone}}<br>
+                    <a href="{% url 'receptionist:view_invoice_history' a.id %}">View Invoice History</a><br>
+                    <a href="{% url 'receptionist:edit_patient' a.id %}">Edit Profile</a>
+                </div>
+                </h2>
+                
+                {% empty %}
+                <h3>No Patients</h3>
+            </li>
+        {% endfor %}
+    </ol>
+    <h3>
+        <a href="{% url 'receptionist:index' %}">Go to home</a>
+    </h3>
+</body>
+</html>

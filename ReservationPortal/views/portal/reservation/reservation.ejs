@@ -1,0 +1,30 @@
+<h2>Reservation detail</h2>
+Customer: <%= reservation.customer.name %>
+<form action="/portal/customer/detail" method="post">
+    <input type="hidden" name="customerId" value="<%= reservation.customer._id %>">
+    <input type="submit" value="View contact detail">
+</form>
+Reservation time: <%= reservation.time %>
+
+<h3>Edit the contact details</h3>
+<form action="/portal/reservation/edit" method="post">
+    <input type="hidden" name="id" value="<%= reservation._id %>">
+    <label for="customer">Customer</label>
+        <select name="customer" required>
+            <option value="none" selected disabled hidden> 
+                Select an Option 
+            </option> 
+            <% for(let customer of customers) { %>
+                <option value="<%= customer._id %>"><%= customer.name %></option>
+            <% } %>  
+        </select>
+        <br><br>
+    <label for="time">Reservation Time</label>
+    <input type="date" name="time" required value="<%= reservation.time %>"><br>
+    <input type="submit" value="Update">
+</form>
+
+<form action="/portal/reservation/delete" method="post">
+    <input type="hidden" name="id" value="<%= reservation._id %>">
+    <input type="submit" value="Delete">
+</form>

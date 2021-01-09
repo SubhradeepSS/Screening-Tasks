@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reception Home</title>
+</head>
+<body>
+    <div>
+        <h1>Appointments</h1>
+        <div>
+            <h3>
+                Total Appointments: {{total_appoint}}<br>
+                Appointments Done: {{done_appoint}}<br>
+                Upcoming Appointments: {{upcoming_appoint}}
+            </h3>
+        </div>
+        <h2>
+            <a href="{% url 'receptionist:view_all_appointments' %}">View Appointments</a>
+        </h2>
+        <h2>
+            <a href="{% url 'receptionist:create_new_appointment' %}">Create new Appointment</a>
+        </h2>
+    </div>
+
+    <div>
+        <h1>Patients</h1>
+        <h2>
+            <a href="{% url 'receptionist:view_all_patients' %}">View all Patients</a>
+        </h2>
+        <h2>
+            <a href="{% url 'receptionist:create_new_patient' %}">Create a new Patient</a>
+        </h2>
+    </div>
+</body>
+</html>
